@@ -6,7 +6,7 @@ const { verifyToken } = require('../middleware/verify-token');
 const { products } = require('../controllers/product');
 const { updateProfile } = require('../controllers/update-profile');
 const uploadMiddleware = require('../middleware/uploadmiddle');
-
+const { forgotPassword, updatePassword} = require('../controllers/verifyemail')
 const router = express.Router();
 
 router.post('/register', registerUser);
@@ -16,6 +16,11 @@ router.post('/verifyToken', verifyToken);
 router.get('/product', products);
 router.put('/product/:id', updateUserCart);
 router.get('/user/:id', getUserDetails);
+router.post('/forgot-password', forgotPassword);
+router.post('/update-password', updatePassword);
+router.post('/update-profile', updateProfile);
+
+
 
 router.post('/updateProfile', uploadMiddleware, async (req, res) => {
     try {
