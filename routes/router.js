@@ -1,5 +1,5 @@
 const express = require('express');
-const { loginUser, updateUserCart, getUserDetails } = require('../controllers/login');
+const { loginUser, updateUserCart, getUserDetails} = require('../controllers/login');
 const { registerUser } = require('../controllers/register');
 const { verifyOTP } = require('../controllers/verifyemail');
 const { verifyToken } = require('../middleware/verify-token');
@@ -10,7 +10,7 @@ const { forgotPassword, updatePassword} = require('../controllers/verifyemail')
 const router = express.Router();
 
 router.post('/register', registerUser);
-router.post('/login', loginUser);
+router.post('/login', loginUser, updateUserCart);
 router.post('/verify-otp', verifyOTP);
 router.post('/verifyToken', verifyToken);
 router.get('/product', products);

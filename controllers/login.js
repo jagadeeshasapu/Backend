@@ -81,10 +81,11 @@ const getUserDetails = async (req, res) => {
 };
 
 
+
 module.exports = {
   loginUser,
   updateUserCart,
-  getUserDetails
+  getUserDetails,
 };
 
 
